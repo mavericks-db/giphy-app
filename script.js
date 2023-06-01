@@ -1,12 +1,17 @@
 const gifContainer = document.querySelector("#gif-container");
+const searchBoxEl = document.querySelector("#search-box");
+const searchButtonEl = document.querySelector("#search-button");
 
-const apiURL = "https://api.giphy.com/v1/gifs/trending?api_key=WW8ndXrgcWP3aru6FW3Ts3T0tq1HTr9A&limit=10&rating=g";
-
+const apiURL = "https://api.giphy.com/v1/gifs/search?api_key=WW8ndXrgcWP3aru6FW3Ts3T0tq1HTr9A&limit=10&rating=g&q=";
 
 function getGifs() {
-  fetch(apiURL).then(res => res.json()).then(data => {
+  let searchTerm = searchBoxEl.value;
+  console.log(searchTerm);
+
+  fetch(apiURL + searchTerm).then(res => res.json()).then(data => {
     const results = data.data;
     console.log(results);
+
     results.map(gif => {
       let giphyBox = document.createElement("div");
       let title = document.createElement("h4");
@@ -18,5 +23,3 @@ function getGifs() {
     })
   })
 }
-
-getGifs();
