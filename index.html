@@ -6,18 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Giphy App</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/a7343df447.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>Giphy</h1>
-  <input type="text" placeholder="search for user" id="search-box" />
-  <button type="button" id="search-button" onclick="getGifs()">search</button>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Giphy</span>
+      <section class="search-container">
+        <input type="text" placeholder="search for gifs..." id="search-box" class="form-control" />
+        <button type="button" id="search-button" onclick="getGifs()" class="btn btn-primary"><i
+            class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    </section>
+
+  </nav>
 
   <section id="gif-container">
     <!-- Giphy Stuff Goes here -->
   </section>
 
   <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
