@@ -14,18 +14,22 @@ function getGifs() {
 
     results.map(gif => {
       let giphyBox = document.createElement("div");
+      let cardBody = document.createElement("div");
       let link = document.createElement("a");
       let title = document.createElement("h5");
       let image = document.createElement("img");
-      giphyBox.classList.add("giphyBox");
+      giphyBox.classList.add("giphyBox", "card");
+      cardBody.classList.add("card-body");
       image.src = gif.images.original.url;
-      image.classList.add("gif-image");
+      image.classList.add("gif-image", "card-img-top");
+      link.classList.add("card-text");
       link.href = gif.embed_url;
       link.target = "_blank";
       title.textContent = gif.title;
 
       link.appendChild(title);
-      giphyBox.append(link, image);
+      cardBody.appendChild(link);
+      giphyBox.append(image, cardBody);
       gifContainer.appendChild(giphyBox);
     })
   })
@@ -41,4 +45,8 @@ function enter(e) {
 
 window.addEventListener("keypress", (e) => {
   enter(e);
+})
+
+window.addEventListener("DOMContentLoaded", () => {
+  searchBoxEl.focus();
 })
